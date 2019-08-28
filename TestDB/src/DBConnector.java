@@ -3,13 +3,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnector {
-	private static String driverName = "com.mysql.jbdc.Driver";
+	private static String driverName = "com.mysql.jdbc.Driver";
 
-	private static String url =
-			"jbdc;mysql://localhost.testdb?autoReconnect=true&useSSL=false";
+	private static String url = "jdbc:mysql://localhost/testdb?autoReconnect=true&useSSL=false";
 
 	private static String user = "root";
-	private static String password = "mysql";
+	private static String password =  "mysql";
 
 	public Connection getConnection(){
 		Connection con = null;
@@ -17,12 +16,10 @@ public class DBConnector {
 		try{
 			Class.forName(driverName);
 			con = DriverManager.getConnection(url,user,password);
-		}catch(ClassNotFoundException e){
-			e.printStackTrace();
-		}catch(SQLException e){
-			e.printStackTrace();
-		}
-		return con;
+			}catch(ClassNotFoundException e){
+				e.printStackTrace();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}return con;
 	}
-
 }
