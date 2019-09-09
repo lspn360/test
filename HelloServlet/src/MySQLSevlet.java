@@ -31,7 +31,7 @@ public class MySQLSevlet extends HttpServlet{
 		out.println("<body>");
 
 		Connection conn = null;
-		String url = "jdbc:mysql://localhost/testdb";
+		String url = "jdbc:mysql://localhost/testdb03";
 		String user = "root";
 		String password = "mysql";
 
